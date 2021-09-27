@@ -31,7 +31,7 @@
                                 @method('Put')
 
 
-                                <div class="form-group row">
+                                <div class="form-group row mb-4">
                                     <label class="col-2 col-form-label">Your photo</label>
                                     <div class="col-10">
                                         <img class="thumb-lg rounded-circle" src="{{ $card->photo ? asset($card->photo) : asset('assets/images/profile.jpeg') }}" style="object-fit: cover; width: 150px; height: 150px; border: 1px solid #ccc;" id="profileImageShow"/><br />
@@ -47,15 +47,19 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">First name</label>
-                                    <div class="col-10">
-                                        <input value="{{ $card->first_name }}" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" required autocomplete="off">
+                                    <label class="col-2 col-form-label"></label>
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <label>First name</label>
+                                            <input value="{{ $card->first_name }}" type="text" parsley-trigger="change" class="form-control @error('first_name') is-invalid @enderror" placeholder="First name" name="first_name" required autocomplete="off">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-2 col-form-label">Last name</label>
-                                    <div class="col-10">
-                                        <input value="{{ $card->last_name }}"  type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" required autocomplete="off">
+
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <label>Last name</label>
+                                            <input value="{{ $card->last_name }}" type="text"  name="last_name" required parsley-trigger="change" class="form-control" placeholder="Last name">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -68,6 +72,18 @@
                                     <label class="col-2 col-form-label">Designation</label>
                                     <div class="col-10">
                                         <input value="{{ $card->designation }}" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label">Company Name</label>
+                                    <div class="col-10">
+                                        <input value="{{ $card->conpany_name }}" type="text" class="form-control @error('conpany_name') is-invalid @enderror" name="conpany_name" required autocomplete="off" placeholder="Company Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label">Description</label>
+                                    <div class="col-10">
+                                        <input value="{{ $card->description }}" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="off" placeholder="Sumthin about You">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -193,7 +209,7 @@
                                     <label class="col-2 col-form-label">Background Image</label>
                                     <div class="col-10">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="custom-control custom-radio image-checkbox">
                                                     <input @if($card->cover_photo == 1 or null ) checked @endif value="1" type="radio" class="custom-control-input" id="ck2a" name="cover_photo">
                                                     <label class="custom-control-label" for="ck2a">
@@ -201,7 +217,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="custom-control custom-radio image-checkbox">
                                                     <input @if($card->cover_photo == 2) checked @endif value="2" type="radio" class="custom-control-input" id="ck2b" name="cover_photo">
                                                     <label class="custom-control-label" for="ck2b">
@@ -209,7 +225,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="custom-control custom-radio image-checkbox">
                                                     <input @if($card->cover_photo == 3) checked @endif value="3" type="radio" class="custom-control-input" id="ck2c" name="cover_photo">
                                                     <label class="custom-control-label" for="ck2c">
@@ -217,11 +233,27 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="custom-control custom-radio image-checkbox">
                                                     <input @if($card->cover_photo == 4) checked @endif value="4" type="radio" class="custom-control-input" id="ck2d" name="cover_photo">
                                                     <label class="custom-control-label" for="ck2d">
                                                         <img src="{{ asset('logo/4.png') }}" alt="#" class="img-fluid">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="custom-control custom-radio image-checkbox">
+                                                    <input @if($card->cover_photo == 5) checked @endif value="5" type="radio" class="custom-control-input" id="dk2d" name="cover_photo">
+                                                    <label class="custom-control-label" for="dk2d">
+                                                        <img src="{{ asset('logo/5.png') }}" alt="#" class="img-fluid">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="custom-control custom-radio image-checkbox">
+                                                    <input @if($card->cover_photo == 6) checked @endif value="6" type="radio" class="custom-control-input" id="e2d" name="cover_photo">
+                                                    <label class="custom-control-label" for="e2d">
+                                                        <img src="{{ asset('logo/6.png') }}" alt="#" class="img-fluid">
                                                     </label>
                                                 </div>
                                             </div>
@@ -303,18 +335,6 @@
         $("#coverprofileImage").change(function() {
           readURLCover(this);
         });
-
-        function setClipboard(value) {
-            var tempInput = document.createElement("input");
-            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-            tempInput.value = value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            var btn = document.getElementById("copyLinkButton");
-            btn.innerHTML = 'Link Copied!';
-        }
 
     </script>
 @endsection

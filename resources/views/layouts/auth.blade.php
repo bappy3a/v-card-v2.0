@@ -17,6 +17,11 @@
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @yield('css')
+    <style type="text/css">
+        .bg-primary{
+            background-color: #213636 !important;
+        }
+    </style>
 </head>
 
 
