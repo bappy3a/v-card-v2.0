@@ -16,6 +16,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     @yield('css')
 </head>
 
@@ -155,6 +156,36 @@
     <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+    const notyf = new Notyf({
+      dismissible: true,
+      position: {
+        x: 'right',
+        y: 'top',
+      },
+      duration: 3000,
+      ripple: true
+    })
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    </script>
+    <script type="text/javascript">
+        function setClipboard(value) {
+            var tempInput = document.createElement("input");
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            notyf.success("Link copied!  <br> " + tempInput.value);
+        }
+    </script>
     @yield('js')
 </body>
 </html>

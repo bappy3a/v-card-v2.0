@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use QrCode;
 use App\Models\Card;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use QrCode;
 
 class CardController extends Controller
 {
@@ -48,25 +50,34 @@ class CardController extends Controller
         $this->validate($request, [
             'first_name' => 'required|string',
             'last_name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'required|string',
-            'photo' => 'nullable|mimes:jpeg,jpg,png',
+            'email' => 'required|email|string|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
         ]);
-        $data = New Card;
-        $data->first_name = $request->first_name;
-        $data->last_name = $request->last_name;
-        $data->email = $request->email;
-        $data->designation = $request->designation;
-        $data->phone = $request->phone;
-        $data->address = $request->address;
-        if($request->hasFile('photo')){
-            $data->photo = $request->photo->store('uploads/card');
+        
+        $user =  User::create([
+            'name' => $request->first_name . ' '. $request->last_name ,
+            'email' => $request->email,
+            'role' => 'user',
+            'password' => Hash::make($request->password),
+        ]);
+
+        $card = New Card;
+        $card->user_id = $user->id;
+        $card->first_name = $request->first_name;
+        $card->last_name = $request->last_name;
+        $card->email = $request->email;
+        $card->cover_photo = 1;
+        if ($card->save()) {
+            $name = strtolower($card->first_name);
+            $card->user_name = sprintf($name.'%04d', $card->id);
         }
-        if($request->hasFile('cover_photo')){
-            $data->cover_photo = $request->cover_photo->store('uploads/card');
-        }
-        $data->save();
-        return redirect()->route('card.username',$data->user_name)->with('message', 'Form successfully submitted!');   
+        $card->save();
+
+        $to = 'allrafi3a@gmail.com';
+        $subject = 'Your Smart Card Info';
+        $message = 'Your Smart link '. route('card.username',$card->user_name);
+        mailSend($subject,$message,$to);
+        return redirect()->route('card.index')->with('message', 'New Account successfully created!');   
     }
 
     /**
@@ -118,6 +129,8 @@ class CardController extends Controller
             $data->photo = $request->photo->store('uploads/card');
         }
         $data->cover_photo = $request->cover_photo;
+        $data->description = $request->description;
+        $data->conpany_name = $request->conpany_name;
 
         $data->link_2 = $request->link_2;
         $data->link_3 = $request->country_code;
@@ -152,6 +165,7 @@ class CardController extends Controller
      */
     public function destroy(Card $card)
     {
+        $card->user->delete();
         $card->delete();
         return back();
     }

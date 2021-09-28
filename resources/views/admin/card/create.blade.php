@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Contact List')
+@section('title','Create a new user')
 
 @section('content')
     <div class="col-12">
@@ -9,63 +9,74 @@
                 <h4 class="m-t-0 header-title mb-4">V-Card Info</h4>
 
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-2"></div>
+                    <div class="col-8">
                         <div class="p-20">
                             <form class="form-horizontal" role="form" method="POST" action="{{ route('card.store') }}" enctype="multipart/form-data">
-<div class="form-group row">
-    <label class="col-2 col-form-label">First name</label>
-    <div class="col-10">
-        <input value="{{ old('first_name') }}" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" required autocomplete="off">
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-2 col-form-label">Last name</label>
-    <div class="col-10">
-        <input value="{{ old('last_name') }}"  type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" required autocomplete="off">
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-2 col-form-label">Designation</label>
-    <div class="col-10">
-        <input value="{{ old('designation') }}" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" required autocomplete="off">
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-2 col-form-label">Phone Number</label>
-    <div class="col-10">
-        <input value="{{ old('phone') }}"  type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" required autocomplete="off">
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-2 col-form-label">Your photo</label>
-    <div class="col-10">
-        <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" >
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-2 col-form-label">Cover Photo</label>
-    <div class="col-10">
-        <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" >
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-2 col-form-label">Cover Photo</label>
-    <div class="col-10">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-primary waves-effect waves-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </div>
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-        </div>
-    </div>
-</div>
+                                @csrf
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label for="emailaddress">First Name :</label>
+                                        <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="First Name">
+                                        @error('first_name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label for="emailaddress">Last Name :</label>
+                                        <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus placeholder="Last Name">
+                                        @error('last_name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label for="password">E-Mail Address :</label>
+                                        <input placeholder="Email Address" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label for="password">Password :</label>
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="*******">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-4">
+                                    <div class="col-12">
+                                        <label for="password">Confirm Password :</label>
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="********">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-4">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+
 
 
 

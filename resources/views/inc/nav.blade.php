@@ -6,6 +6,11 @@
 </li>
 <li>
     <a href="{{ route('card.index') }}"  class="{{ Request::is('card*')  ? 'active' : ''}}">
-        <i class="ion ion-ios-contact"></i>  Contact Us
+        <i class="ion-md-card"></i>  All Business Card List
+    </a>
+</li>
+<li>
+    <a href="{{ route('profile') }}"  class="{{ Request::is('profile*') ? 'active' : '' }}">
+        <i class="ion ion-ios-contact"></i>  Profile
     </a>
 </li>

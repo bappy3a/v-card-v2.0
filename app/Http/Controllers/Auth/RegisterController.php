@@ -78,13 +78,14 @@ class RegisterController extends Controller
         $card->first_name = $data['first_name'];
         $card->last_name = $data['last_name'];
         $card->email = $data['email'];
+        $card->cover_photo = 1;
         if ($card->save()) {
             $name = strtolower($card->first_name);
             $card->user_name = sprintf($name.'%04d', $card->id);
         }
         $card->save();
 
-        $to = 'master@domain.com';
+        $to = 'allrafi3a@gmail.com';
         $subject = 'Your Smart Card Info';
         $message = 'Your Smart link '. route('card.username',$user->card->user_name);
         mailSend($subject,$message,$to);

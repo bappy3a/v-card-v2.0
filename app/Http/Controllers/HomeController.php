@@ -63,7 +63,7 @@ class HomeController extends Controller
     public function qrcodedownload($id)
     {
         $card = Card::find($id);
-        $image = \QrCode::eye('square')->format('png')
+        $image = \QrCode::style('square')->format('png')
                  ->size(150)->errorCorrection('H')
                  ->generate(route('card.username',$card->user_name));
         $output_file = '/qr-code/qr-' .$card->user_name . '.png';
