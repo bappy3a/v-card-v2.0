@@ -41,7 +41,11 @@
                     @else
                         <img src="{{ asset('assets/images/profile.jpeg') }}" alt="heder">
                     @endif
-                    
+                    <div class="top-left">
+                        <span class="cover_head">A LIVELONG CARD</span><br>
+                        <span class="cover_mid">FOR A LIFELONG</span><br>
+                        <span class="cover_last">RELATIONSHIP</span>
+                    </div>
                 </div>
                 {{-- <div class="qr">
                     <a href="">{!! QrCode::size(34)->generate(route('card.username',$card->user_name)) !!}</a>
@@ -54,7 +58,13 @@
                         @else
                             <img src="{{ asset('website/img/heder.png') }}" alt="heder">
                         @endif
+
                     </div>
+                    {{-- <div class="heder_description">
+                        <span>A LIVELONG CARD</span>
+                        <span>FOR A LIFELONG</span>
+                        <span>RELATIONSHIP</span>
+                    </div> --}}
                     <div class="m_qr">
                         <a href=""><img src="{{ asset('website/img/Group.png') }}" alt=""></a>
                     </div>
@@ -62,7 +72,7 @@
                     <div class="name">{{ $card->first_name }}  {{ $card->last_name }}</div>
                     <div class="designation">
                         <p>{{ $card->designation }}</p>
-                        <hr style="text-align: center;margin-left: 137px;margin-top: -8px;width: 40px;">
+                        <hr class="he_card">
                     </div>
                     <div class="company">{{ $card->conpany_name }}</div>
                     <div class="intro">

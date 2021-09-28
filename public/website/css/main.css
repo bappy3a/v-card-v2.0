@@ -29,6 +29,7 @@ img{
 }
 .profile-card .profile-header{
   height: 70px;
+  position: relative;
 }
 
 .profile-card .profile-body{
@@ -38,6 +39,7 @@ img{
  position: relative;
  margin-top: 70px;
  background-image: linear-gradient(0deg, #def1fb, white, white);
+ height: 613px;
 }
 
 .profile-card .profile-body .author-img{
@@ -288,6 +290,39 @@ span.pby {
     padding-top: 5px;
 }
 
+.he_card{
+  text-align: center;
+  margin-left: 137px;
+  margin-top: -8px;
+  width: 40px;
+
+}
+
+.top-left {
+    position: absolute;
+    bottom: 4px;
+    left: 16px;
+    color: #ffffff9e;
+}
+
+span.cover_head {
+    font-size: 13px;
+    font-family: emoji;
+    margin-left: -40px;
+}
+
+span.cover_mid {
+    font-size: 17px;
+    margin-left: -20px;
+    font-family: auto;
+}
+
+span.cover_last {
+    font-size: 21px;
+    font-weight: bold;
+    font-family: auto;
+}
+
 /*-------mobile---------*/
 
 @media (max-width: 768px) {
@@ -304,7 +339,7 @@ span.pby {
    text-align: center;
    margin: 0px auto; 
    box-shadow: 0px 0px 18px #ccc;
-   height: 756px;
+    height: 811px;
     overflow-y: scroll;
  }
 
@@ -346,6 +381,10 @@ span.pby {
     padding-left: 9px;
     padding-bottom: 5px;
     padding-top: 5px;
+  }
+
+  .he_card{
+    margin-left: 126px;
   }
 }
 
