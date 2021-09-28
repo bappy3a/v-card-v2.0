@@ -37,9 +37,9 @@
             <div class="profile-card">
                 <div class="profile-header">
                     @if ($card->cover_photo)
-                    <img src="{{ asset('website/img/heder.png') }}" alt="heder">
+                        <img src="{{ asset('logo/'.$card->cover_photo.'.png') }}" alt="heder">   
                     @else
-                    <img src="{{ asset('website/img/heder.png') }}" alt="heder">
+                        <img src="{{ asset('assets/images/profile.jpeg') }}" alt="heder">
                     @endif
                     
                 </div>
@@ -50,9 +50,9 @@
                 <div class="profile-body">
                     <div class="author-img">
                         @if ($card->photo)
-                        <img src="{{ asset($card->photo) }}" alt="heder">
+                            <img src="{{ asset($card->photo) }}" alt="heder">
                         @else
-                        <img src="{{ asset('website/img/heder.png') }}" alt="heder">
+                            <img src="{{ asset('website/img/heder.png') }}" alt="heder">
                         @endif
                     </div>
                     <div class="m_qr">
@@ -61,14 +61,14 @@
                     <div class="social_list">
                     <div class="name">{{ $card->first_name }}  {{ $card->last_name }}</div>
                     <div class="designation">
-                        <p>Graphic designer</p>
+                        <p>{{ $card->designation }}</p>
                         <hr style="text-align: center;margin-left: 137px;margin-top: -8px;width: 40px;">
                     </div>
-                    <div class="company">Adobe Creative</div>
+                    <div class="company">{{ $card->conpany_name }}</div>
                     <div class="intro">
                         <p>{{ $card->link_3.$card->phone }}</p>
                     </div>
-                    <div class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem typesetting Ipsum .</div>
+                    <div class="description">{{ $card->description }}</div>
                         <ul>
                             @if($card->link_1)
                             @php
@@ -207,9 +207,6 @@
                             </li>
                             <br>
                             @endif
-                                <li>
-                                <i class="fas fa-globe custom_i"></i></i><span>&nbsp;&nbsp;&nbsp; <a href="">Website</a></span>
-                                </li><br>
                                
 
                             </ul>
