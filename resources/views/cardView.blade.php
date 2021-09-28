@@ -65,8 +65,36 @@
                         <span>FOR A LIFELONG</span>
                         <span>RELATIONSHIP</span>
                     </div> --}}
+
+
+                    <!-- Trigger/Open The Modal -->
+                    
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <span class="close">&times;</span>
+                         
+                        </div>
+                        <div class="modal-body">
+                          <img src="{{ asset('website/img/org-qr.png') }}" alt="Orginal QR">
+                          <p class="user_name">Mona Lisa</p>
+                          <p class="user_phone">+351 920 143 746</p>
+                        </div>
+                        <div class="modal-footer">
+                          
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
                     <div class="m_qr">
-                        <a href=""><img src="{{ asset('website/img/Group.png') }}" alt=""></a>
+                        <a id="myBtn" href="javascript:void(0)"><img src="{{ asset('website/img/Group.png') }}" alt=""></a>
                     </div>
                     <div class="social_list">
                     <div class="name">{{ $card->first_name }}  {{ $card->last_name }}</div>

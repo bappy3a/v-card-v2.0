@@ -323,6 +323,100 @@ span.cover_last {
     font-family: auto;
 }
 
+
+/*-------modal-------*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #82828270;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    height: 807px;
+    margin-top: -80px;
+    width: 398px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  
+
+}
+.modal-body img {
+    width: 169px;
+    margin-top: 315px;
+    margin-left: 19px;
+}
+
+p.user_name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+}
+
+p.user_phone {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-top: 155px;
+  font-family: revert;
+}
+/*-------modal end-------*/
+
 /*-------mobile---------*/
 
 @media (max-width: 768px) {
@@ -385,6 +479,13 @@ span.cover_last {
 
   .he_card{
     margin-left: 126px;
+  }
+
+
+  .modal-content {
+    height: 808px;
+    margin-top: -99px;
+    width: auto;
   }
 }
 
