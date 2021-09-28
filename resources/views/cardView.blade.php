@@ -80,9 +80,9 @@
                          
                         </div>
                         <div class="modal-body">
-                          <img src="{{ asset('website/img/org-qr.png') }}" alt="Orginal QR">
-                          <p class="user_name">Mona Lisa</p>
-                          <p class="user_phone">+351 920 143 746</p>
+                           <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(70)->generate(route('card.username',$card->user_name))) !!} ">
+                          <p class="user_name">{{ $card->first_name }}  {{ $card->last_name }}</p>
+                          <p class="user_phone">{{ $card->link_3.$card->phone }}</p>
                         </div>
                         <div class="modal-footer">
                           
@@ -297,7 +297,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ route('download.qrcode',$card->id) }}">
                                         <i class="fas fa-download"></i>
                                     </a>
                                 </li>
