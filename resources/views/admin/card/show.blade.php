@@ -3,14 +3,14 @@
 @section('title','Smart Card')
 
 @section('content')
-    <div class="col-12">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <h4 class="m-t-0 header-title mb-4">Smart Card Info</h4>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <button id="copyLinkButton" onclick="setClipboard('{{ route('card.username',auth()->user()->card->user_name) }}')" type="btn" class="btn btn-primary float-right" style="margin-top:-10px;margin-left: 10px;">Copy Link</button>
                         <a class="btn btn-success float-right" style="margin-top:-10px" href="{{ route('download.qrcode',$card->id) }}">Download QrCode</a>
                     </div>
@@ -18,7 +18,7 @@
                 
 
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-12">
                         <div class="p-20">
 
                             @if (\Session::has('message'))
@@ -32,8 +32,8 @@
 
 
                                 <div class="form-group row mb-4">
-                                    <label class="col-2 col-form-label">Your photo</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Your photo</label>
+                                    <div class="col-md-10">
                                         <img class="thumb-lg rounded-circle" src="{{ $card->photo ? asset($card->photo) : asset('assets/images/profile.jpeg') }}" style="object-fit: cover; width: 150px; height: 150px; border: 1px solid #ccc;" id="profileImageShow"/><br />
                                         <div class="mt-2">
                                             <input  type="file" name="photo" id="profileImage" class="@error('photo') is-invalid @enderror" />
@@ -47,15 +47,15 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label"></label>
-                                    <div class="col-5">
+                                    <label class="col-md-2 col-form-label"></label>
+                                    <div class="col-md-5">
                                         <div class="form-group">
                                             <label>First name</label>
                                             <input value="{{ $card->first_name }}" type="text" parsley-trigger="change" class="form-control @error('first_name') is-invalid @enderror" placeholder="First name" name="first_name" required autocomplete="off">
                                         </div>
                                     </div>
 
-                                    <div class="col-5">
+                                    <div class="col-md-5">
                                         <div class="form-group">
                                             <label>Last name</label>
                                             <input value="{{ $card->last_name }}" type="text"  name="last_name" required parsley-trigger="change" class="form-control" placeholder="Last name">
@@ -63,37 +63,37 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Email</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Email</label>
+                                    <div class="col-md-10">
                                         <input value="{{ $card->email }}"  type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Designation</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Designation</label>
+                                    <div class="col-md-10">
                                         <input value="{{ $card->designation }}" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" required autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Company Name</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Company Name</label>
+                                    <div class="col-md-10">
                                         <input value="{{ $card->conpany_name }}" type="text" class="form-control @error('conpany_name') is-invalid @enderror" name="conpany_name" required autocomplete="off" placeholder="Company Name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Description</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Description</label>
+                                    <div class="col-md-10">
                                         <input value="{{ $card->description }}" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="off" placeholder="Sumthin about You">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Address</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Address</label>
+                                    <div class="col-md-10">
                                         <input value="{{ $card->link_2 }}" type="text" class="form-control @error('link_2') is-invalid @enderror" name="link_2" required autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Phone Number</label>
+                                    <label class="col-md-2 col-form-label">Phone Number</label>
                                     <div class="col-md-3">
                                         <select class="form-control select2" name="country_code" required>
                                             <option value="" selected> Select Country Code</option>
@@ -107,8 +107,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Social Links</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Social Links</label>
+                                    <div class="col-md-10">
                                         @php
                                             $key1 = json_decode($card->link_1) ? json_decode($card->link_1)->key : Null;
                                             $key2 = json_decode($card->link_4) ? json_decode($card->link_4)->key : Null;
@@ -206,8 +206,8 @@
 
 
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Background Image</label>
-                                    <div class="col-10">
+                                    <label class="col-md-2 col-form-label">Background Image</label>
+                                    <div class="col-md-10">
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="custom-control custom-radio image-checkbox">
@@ -263,8 +263,8 @@
 
 
                                 <div class="form-group row">
-                                    <div class="col-2 "></div>
-                                    <div class="col-10">
+                                    <div class="col-md-2 "></div>
+                                    <div class="col-md-10">
                                         <button type="submit" class="btn btn-success">Update</button>
                                     </div>
                                 </div>

@@ -3,13 +3,13 @@
 @section('title','Smart Card')
 
 @section('content')
-    <div class="col-12">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="m-t-0 header-title mb-4">Smart Card Info</h4>
 
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-12">
                         <div class="p-20">
 
                             @if (\Session::has('message'))
@@ -23,7 +23,7 @@
                                 @method('Put')
                                 <div class="row">
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Your photo</label> <br>
                                             <img class="thumb-lg rounded-circle" src="{{ $card->photo ? asset($card->photo) : asset('assets/images/profile.jpeg') }}" style="object-fit: cover; width: 150px; height: 150px; border: 1px solid #ccc;" id="profileImageShow"/><br />
@@ -39,32 +39,32 @@
                                     </div>
 
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>First name</label>
                                             <input value="{{ $card->first_name }}" type="text" parsley-trigger="change" class="form-control @error('first_name') is-invalid @enderror" placeholder="First name" name="first_name" required autocomplete="off">
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Last name</label>
                                             <input value="{{ $card->last_name }}" type="text"  name="last_name" required parsley-trigger="change" class="form-control" placeholder="Last name">
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Email</label>
                                             <input value="{{ $card->email }}" type="email" name="email" parsley-trigger="change" class="form-control" placeholder="Email">
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Phone Number</label>
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="col-md-6">
                                                     <select class="form-control select2" name="country_code" required>
                                                         <option value="" selected> Select Country Code</option>
                                                         @foreach(json_decode(file_get_contents(asset('js/countrycodes.json')), true) as $code)
@@ -72,21 +72,21 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-md-6">
                                                     <input value="{{ $card->phone }}"  type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" required autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Designation</label>
                                             <input value="{{ $card->designation }}" type="text" name="designation" parsley-trigger="change" class="form-control" placeholder="Designation">
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Address</label>
                                             <input value="{{ $card->link_2 }}" type="text" name="link_2" parsley-trigger="change" class="form-control" placeholder="Address">
@@ -105,11 +105,11 @@
                                         $link4 = json_decode($card->link_6) ? json_decode($card->link_6)->link : Null;
                                     @endphp
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Social Links</label>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-md-3">
                                                     <select class="form-control" name="type1" required>
                                                         <option value="">select one</option>
                                                         <option @if($key1=='linkedin') selected @endif value="linkedin">linkedin</option>
@@ -123,18 +123,18 @@
                                                         <option @if($key1=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-9">
+                                                <div class="col-md-9">
                                                     <input value="{{ $link1 }}" type="text" class="form-control" placeholder="Website Address" name="link1" required>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Social Links</label>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-md-3">
                                                     <select class="form-control" name="type2">
                                                         <option value="">select one</option>
                                                         <option @if($key2=='linkedin') selected @endif value="linkedin">linkedin</option>
@@ -148,18 +148,18 @@
                                                         <option @if($key2=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-9">
+                                                <div class="col-md-9">
                                                     <input value="{{ $link2 }}" type="text" class="form-control" placeholder="Website Address" name="link2">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Social Links</label>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-md-3">
                                                     <select class="form-control" name="type3" >
                                                         <option value="">select one</option>
                                                         <option @if($key3=='linkedin') selected @endif value="linkedin">linkedin</option>
@@ -173,18 +173,18 @@
                                                         <option @if($key3=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-9">
+                                                <div class="col-md-9">
                                                     <input value="{{ $link3 }}" type="text" class="form-control" placeholder="Website Address" name="link3" >
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Social Links</label>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-md-3">
                                                     <select class="form-control" name="type4" >
                                                         <option value="">select one</option>
                                                         <option @if($key4=='linkedin') selected @endif value="linkedin">linkedin</option>
@@ -198,14 +198,14 @@
                                                         <option @if($key4=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-9">
+                                                <div class="col-md-9">
                                                     <input value="{{ $link4 }}" type="text" class="form-control" placeholder="Website Address" name="link4" >
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-<div class="col-12">
+<div class="col-md-12">
     <div class="form-group">
         <label>Select Background Image</label>
         <div class="row">
@@ -250,7 +250,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <div class="col-12">
+                                    <div class="col-md-12">
                                         <button type="submit" class="btn btn-success float-right">Update</button>
                                     </div>
                                 </div>

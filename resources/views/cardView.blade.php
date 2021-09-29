@@ -13,13 +13,17 @@
 
     <link rel="manifest" href="site.webmanifest" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="shortcut icon" href="{{ asset('logo/logo.svg') }}">
+    <link rel="shortcut icon" href="{{ asset('logo/favicon.ico') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- -----cdn------ -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
     <!-- -----cdn------ -->
 
@@ -105,6 +109,9 @@
                     <div class="company">{{ $card->conpany_name }}</div>
                     <div class="intro">
                         <p>{{ $card->link_3.$card->phone }}</p>
+                    </div>
+                    <div class="card_mail">
+                        <p>monalisa@gmail.com</p>
                     </div>
                     <div class="description">{{ $card->description }}</div>
                         <ul>
@@ -305,7 +312,7 @@
                     </div>
                     <div class="brand">
                      <span class="web_address">www.thelakhanigroup.com</span>
-                     <span class="pby">Powered By <img src="{{ asset('website/img/logo.svg') }}" alt=""></span>
+                     <span class="pby">Powered By <a href="https://thelakhanigroup.com/"><img src="{{ asset('website/img/logo.svg') }}" alt=""></a></span>
                     </div>
                 </div>
             </div>
