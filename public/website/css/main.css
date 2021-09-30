@@ -40,7 +40,7 @@ img{
  position: relative;
  margin-top: 70px;
  background-image: linear-gradient(0deg, #def1fb, white, white);
- height: 613px;
+ height: 100%;
  box-shadow: 0px 0px 18px #717171;
 }
 
@@ -63,16 +63,17 @@ img{
   font-weight: 600;
   text-transform: uppercase;
   color: #676666;
-
-
+  margin-left: 20px;
 }
 .profile-card .profile-body .intro{
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 1.6;
-  /* margin: 20px 0px 30px 0px; */
-  font-family: cursive;
-  color: #838383;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.6;
+    /* margin: 20px 0px 30px 0px; */
+    font-family: cursive;
+    color: #424242;
+    margin-top: -15px;
+
 
 }
 .social-icon ul {
@@ -103,9 +104,9 @@ img{
   border:1px solid var(--dark);
   }*/
   .social-icon ul li a i{
-    line-height: 28px;
+    line-height: 24px;
     color: #666;
-    font-size: 28px;
+    font-size: 22px;
   }
   /*.social-icon ul li a i:hover,
   .social-icon ul li a:hover i{
@@ -141,6 +142,8 @@ img{
     /* margin-top: 10px; */
     /* padding-bottom: 15px; */
     position: fixed;
+    -webkit-backface-visibility: hidden;
+    bottom: 0px;
 }
 
 span.web_address {
@@ -249,10 +252,11 @@ span.pby {
 }
 
 .m_qr img {
-  width: auto;
+  width: 30px;
   height: auto;
   position: relative;
   margin-left: 92%;
+
 }
 
 
@@ -286,7 +290,7 @@ span.pby {
 }
 
 .brand {
-    margin-top: 7px;
+    /*margin-top: 7px;*/
     /* margin-bottom: 6px; */
     background-color: #d5d5d5;
     padding-left: 10px;
@@ -303,11 +307,13 @@ span.pby {
 }
 
 .top-left {
-    position: absolute;
-    bottom: 4px;
-    left: 16px;
-    color: #ffffff9e;
+   position: absolute;
+  bottom: 4px;
+  left: 16px;
+  color: #ffffffd6;
+  /*background: #00000066;*/
 }
+
 
 span.cover_head {
     font-size: 13px;
@@ -330,13 +336,26 @@ span.cover_last {
 
 
 .card_mail p {
-    font-family: 'Lato', sans-serif;
-    font-size: 17px;
-    margin-top: -25px;
-    color: #676767;;
-    margin-bottom: 60px;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  margin-top: -25px;
+  color: #777575ab;
+  margin-bottom: 25px;
 }
 
+
+.intro p {
+    font-family: 'Lato';
+}
+
+
+.social-icon {
+    margin-bottom: -7px;
+}
+
+.social_list {
+    margin-top: 30px;
+}
 
 
 /*-------modal-------*/
@@ -358,7 +377,7 @@ span.cover_last {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #82828270;
+    background-color: #00000075;;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -413,8 +432,9 @@ span.cover_last {
 }
 .modal-body img {
     width: 169px;
-    margin-top: 315px;
+    margin-top: 218px;
     margin-left: 19px;
+    border: 22px #fff solid;
 }
 
 p.user_name {
@@ -428,8 +448,14 @@ p.user_phone {
   font-size: 28px;
   font-weight: bold;
   color: white;
-  margin-top: 155px;
+  margin-top: 46px;
   font-family: revert;
+}
+
+
+i.fas.fa-check-circle {
+    font-size: 15px;
+    color: #0193fb;
 }
 /*-------modal end-------*/
 

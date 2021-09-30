@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>{{ $card->first_name }}  {{ $card->last_name }}</title>
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta property="og:title" content="" />
     <meta property="og:type" content="" />
@@ -54,14 +54,31 @@
                 {{-- <div class="qr">
                     <a href="">{!! QrCode::size(34)->generate(route('card.username',$card->user_name)) !!}</a>
                 </div> --}}
-                
+                <style type="text/css">
+                    .author-image{
+                        width: 115px;
+                        height: 115px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        background-color: var(--white);
+                        box-shadow: 0px 0px 18px #848181;
+                        background-size: cover !important;
+                        border: 5px #fff solid;
+                    }
+                </style>
+                <?php 
+                $default_image=asset('website/img/heder.png');
+                ?>
                 <div class="profile-body">
                     <div class="author-img">
+                        <div class="author-image" style="background:#fff url('{{!empty($card->photo)?asset($card->photo):$default_image}}');"></div>
+
+                        {{-- 
                         @if ($card->photo)
                             <img src="{{ asset($card->photo) }}" alt="heder">
                         @else
                             <img src="{{ asset('website/img/heder.png') }}" alt="heder">
-                        @endif
+                        @endif --}}
 
                     </div>
                     {{-- <div class="heder_description">
@@ -101,7 +118,7 @@
                         <a id="myBtn" href="javascript:void(0)"><img src="{{ asset('website/img/Group.png') }}" alt=""></a>
                     </div>
                     <div class="social_list">
-                    <div class="name">{{ $card->first_name }}  {{ $card->last_name }}</div>
+                    <div class="name">{{ $card->first_name }}  {{ $card->last_name }} <span><i class="fas fa-check-circle"></i></span></div>
                     <div class="designation">
                         <p>{{ $card->designation }}</p>
                         <hr class="he_card">
@@ -286,7 +303,7 @@
                     <span></span>
                 </div> -->
                 <div class="footer">
-                    <div class="social-icon footer">
+                    <div class="social-icon" style="background-color: var(--white);">
                         <ul>
                                 <li>
                                     <a href="tel:{{ $card->link_3.$card->phone }}">
