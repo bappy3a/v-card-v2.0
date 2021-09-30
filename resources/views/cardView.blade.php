@@ -128,7 +128,7 @@
                         <p>{{ $card->link_3.$card->phone }}</p>
                     </div>
                     <div class="card_mail">
-                        <p>monalisa@gmail.com</p>
+                        <p>{{ $card->email }}</p>
                     </div>
                     <div class="description">{{ $card->description }}</div>
                         <ul>

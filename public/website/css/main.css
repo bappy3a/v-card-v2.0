@@ -93,7 +93,7 @@ img{
   display: block;
   /* border-radius: 50%; */
   transition: all 0.5s ease-out;
-  background-color: white;
+  /*background-color: white;*/
 }
 .social-icon ul{
   margin:0;

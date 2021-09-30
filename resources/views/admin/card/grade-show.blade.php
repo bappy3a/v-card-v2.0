@@ -114,7 +114,7 @@
                                                         <option value="">select one</option>
                                                         <option @if($key1=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                         <option @if($key1=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                        <option @if($key1=='facebook') selected @endif value="facebook">Favebook</option>
+                                                        <option @if($key1=='facebook') selected @endif value="facebook">Facebook</option>
                                                         <option @if($key1=='Twiter') selected @endif value="Twiter">Twiter</option>
                                                         <option @if($key1=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                         <option @if($key1=='Behance') selected @endif value="Behance">Behance</option>
@@ -139,7 +139,7 @@
                                                         <option value="">select one</option>
                                                         <option @if($key2=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                         <option @if($key2=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                        <option @if($key2=='facebook') selected @endif value="facebook">Favebook</option>
+                                                        <option @if($key2=='facebook') selected @endif value="facebook">Facebook</option>
                                                         <option @if($key2=='Twiter') selected @endif value="Twiter">Twiter</option>
                                                         <option @if($key2=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                         <option @if($key2=='Behance') selected @endif value="Behance">Behance</option>
@@ -164,7 +164,7 @@
                                                         <option value="">select one</option>
                                                         <option @if($key3=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                         <option @if($key3=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                        <option @if($key3=='facebook') selected @endif value="facebook">Favebook</option>
+                                                        <option @if($key3=='facebook') selected @endif value="facebook">Facebook</option>
                                                         <option @if($key3=='Twiter') selected @endif value="Twiter">Twiter</option>
                                                         <option @if($key3=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                         <option @if($key3=='Behance') selected @endif value="Behance">Behance</option>
@@ -189,7 +189,7 @@
                                                         <option value="">select one</option>
                                                         <option @if($key4=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                         <option @if($key4=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                        <option @if($key4=='facebook') selected @endif value="facebook">Favebook</option>
+                                                        <option @if($key4=='facebook') selected @endif value="facebook">Facebook</option>
                                                         <option @if($key4=='Twiter') selected @endif value="Twiter">Twiter</option>
                                                         <option @if($key4=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                         <option @if($key4=='Behance') selected @endif value="Behance">Behance</option>

@@ -123,12 +123,12 @@
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type1" required>
+                                                <select class="form-control type_link" name="type1" required onchange="change_link('type1', 'link1');">
                                                     <option value="">select one</option>
                                                     <option @if($key1=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                     <option @if($key1=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key1=='facebook') selected @endif value="facebook">Favebook</option>
-                                                    <option @if($key1=='Twiter') selected @endif value="Twiter">Twiter</option>
+                                                    <option @if($key1=='facebook') selected @endif value="facebook">Facebook</option>
+                                                    <option @if($key1=='Twiter') selected @endif value="Twiter">Twitter</option>
                                                     <option @if($key1=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                     <option @if($key1=='Behance') selected @endif value="Behance">Behance</option>
                                                     <option @if($key1=='Youtube') selected @endif value="Youtube">Youtube</option>
@@ -143,12 +143,12 @@
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type2">
+                                                <select class="form-control" name="type2" onchange="change_link('type2', 'link2');">
                                                     <option value="">select one</option>
                                                     <option @if($key2=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                     <option @if($key2=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key2=='facebook') selected @endif value="facebook">Favebook</option>
-                                                    <option @if($key2=='Twiter') selected @endif value="Twiter">Twiter</option>
+                                                    <option @if($key2=='facebook') selected @endif value="facebook">Facebook</option>
+                                                    <option @if($key2=='Twiter') selected @endif value="Twiter">Twitter</option>
                                                     <option @if($key2=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                     <option @if($key2=='Behance') selected @endif value="Behance">Behance</option>
                                                     <option @if($key2=='Youtube') selected @endif value="Youtube">Youtube</option>
@@ -163,12 +163,12 @@
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type3" >
+                                                <select class="form-control" name="type3"  onchange="change_link('type3', 'link3');">
                                                     <option value="">select one</option>
                                                     <option @if($key3=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                     <option @if($key3=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key3=='facebook') selected @endif value="facebook">Favebook</option>
-                                                    <option @if($key3=='Twiter') selected @endif value="Twiter">Twiter</option>
+                                                    <option @if($key3=='facebook') selected @endif value="facebook">Facebook</option>
+                                                    <option @if($key3=='Twiter') selected @endif value="Twiter">Twitter</option>
                                                     <option @if($key3=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                     <option @if($key3=='Behance') selected @endif value="Behance">Behance</option>
                                                     <option @if($key3=='Youtube') selected @endif value="Youtube">Youtube</option>
@@ -183,12 +183,12 @@
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type4" >
+                                                <select class="form-control" name="type4"  onchange="change_link('type4', 'link4');">
                                                     <option value="">select one</option>
                                                     <option @if($key4=='linkedin') selected @endif value="linkedin">linkedin</option>
                                                     <option @if($key4=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key4=='facebook') selected @endif value="facebook">Favebook</option>
-                                                    <option @if($key4=='Twiter') selected @endif value="Twiter">Twiter</option>
+                                                    <option @if($key4=='facebook') selected @endif value="facebook">Facebook</option>
+                                                    <option @if($key4=='Twiter') selected @endif value="Twiter">Twitter</option>
                                                     <option @if($key4=='Instagram') selected @endif value="Instagram">Instagram</option>
                                                     <option @if($key4=='Behance') selected @endif value="Behance">Behance</option>
                                                     <option @if($key4=='Youtube') selected @endif value="Youtube">Youtube</option>
@@ -282,6 +282,35 @@
 @endsection
 
 @section('js')
+    <script type="text/javascript">
+        function change_link(key, value){
+
+            var facebook = '{{ \App\Models\SocialLink::where("name", "Facebook")->first()->link;  }}';
+            var twitter = '{{ \App\Models\SocialLink::where("name", "Twitter")->first()->link;  }}';
+            var instagram = '{{ \App\Models\SocialLink::where("name", "instagram")->first()->link;  }}';
+            var behance = '{{ \App\Models\SocialLink::where("name", "Behance")->first()->link;  }}';
+            var youtube = '{{ \App\Models\SocialLink::where("name", "youtube")->first()->link;  }}';
+            var skype = '{{ \App\Models\SocialLink::where("name", "skype")->first()->link;  }}';
+            var whatsapp = '{{ \App\Models\SocialLink::where("name", "Whatsapp")->first()->link;  }}';
+
+            var type = document.getElementsByName(key)[0].value;
+
+            if (type == "facebook"){
+                document.getElementsByName(value)[0].value = facebook;
+            } else if(type == "Twiter"){
+                document.getElementsByName(value)[0].value = twitter;
+            } else if(type == "Instagram"){
+                document.getElementsByName(value)[0].value = instagram;
+            } else if(type == "Behance"){
+                document.getElementsByName(value)[0].value = behance;
+            } else if(type == "Youtube"){
+                document.getElementsByName(value)[0].value = youtube;
+            } else if(type == "WhatsApp"){
+                document.getElementsByName(value)[0].value = whatsapp;
+            }
+        }
+
+    </script>
     <script type="text/javascript">
         function appendNewLink(){
             var l= $('.socialLink').length;
