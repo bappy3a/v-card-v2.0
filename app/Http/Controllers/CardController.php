@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Card;
 use App\Models\User;
+use App\Models\SocialLink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use QrCode;
@@ -88,8 +89,9 @@ class CardController extends Controller
      */
     public function show($id)
     {
+        $socialLink=SocialLink::all();
         $card = Card::where('user_id',auth()->user()->id)->first();
-        return view('admin.card.show',compact('card'));
+        return view('admin.card.show',compact('card','socialLink'));
     }
 
     /**
@@ -170,8 +172,12 @@ class CardController extends Controller
         return back();
     }
 
-    public function username($username)
+    public function username($username='')
     {
+        if(empty($username))
+        {
+            return redirect(url('login'))->with('message', 'Please login again.');
+        }
         $card = Card::where('user_name',$username)->first();
         return view('cardView',compact('card'));
     }

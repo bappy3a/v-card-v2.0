@@ -40,7 +40,8 @@ img{
  position: relative;
  margin-top: 70px;
  background-image: linear-gradient(0deg, #def1fb, white, white);
- height: 100vh;
+ height: 121vh;
+  min-height: 100vh;
  box-shadow: 0px 0px 18px #717171;
 }
 
@@ -351,6 +352,7 @@ span.cover_last {
 
 .social-icon {
     margin-bottom: -7px;
+    box-shadow: 0px 0px 6px #00000038;
 }
 
 .social_list {
@@ -377,7 +379,7 @@ span.cover_last {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #00000075;;
+    background-color: #000000cf;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -475,7 +477,7 @@ i.fas.fa-check-circle {
    text-align: center;
    margin: 0px auto; 
    box-shadow: 0px 0px 18px #ccc;
-    height: 811px;
+    height: 100vh;
     overflow-y: scroll;
  }
 

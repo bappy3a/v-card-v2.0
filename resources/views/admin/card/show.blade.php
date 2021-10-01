@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="m-t-0 header-title mb-4">Smart Card Info</h4>
+                        <h4 class="m-t-0 header-title mb-4">Smart Card Info </h4>
                     </div>
                     <div class="col-md-6">
                         <button id="copyLinkButton" onclick="setClipboard('{{ route('card.username',auth()->user()->card->user_name) }}')" type="btn" class="btn btn-primary float-right" style="margin-top:-10px;margin-left: 10px;">Copy Link</button>
@@ -107,98 +107,56 @@
                                         <input required value="{{ $card->phone }}"  type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" autocomplete="off">
                                     </div>
                                 </div>
+                                
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Social Links</label>
                                     <div class="col-md-10">
-                                        @php
-                                            $key1 = json_decode($card->link_1) ? json_decode($card->link_1)->key : Null;
-                                            $key2 = json_decode($card->link_4) ? json_decode($card->link_4)->key : Null;
-                                            $key3 = json_decode($card->link_5) ? json_decode($card->link_5)->key : Null;
-                                            $key4 = json_decode($card->link_6) ? json_decode($card->link_6)->key : Null;
-
-                                            $link1 = json_decode($card->link_1) ? json_decode($card->link_1)->link : Null;
-                                            $link2 = json_decode($card->link_4) ? json_decode($card->link_4)->link : Null;
-                                            $link3 = json_decode($card->link_5) ? json_decode($card->link_5)->link : Null;
-                                            $link4 = json_decode($card->link_6) ? json_decode($card->link_6)->link : Null;
-                                        @endphp
-
+                                       
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control type_link" name="type1" required onchange="change_link('type1', 'link1');">
+                                                <select class="form-control type_link" name="type1">
                                                     <option value="">select one</option>
-                                                    <option @if($key1=='linkedin') selected @endif value="linkedin">linkedin</option>
-                                                    <option @if($key1=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key1=='facebook') selected @endif value="facebook">Facebook</option>
-                                                    <option @if($key1=='Twiter') selected @endif value="Twiter">Twitter</option>
-                                                    <option @if($key1=='Instagram') selected @endif value="Instagram">Instagram</option>
-                                                    <option @if($key1=='Behance') selected @endif value="Behance">Behance</option>
-                                                    <option @if($key1=='Youtube') selected @endif value="Youtube">Youtube</option>
-                                                    <option @if($key1=='Skype') selected @endif value="Skype">Skype</option>
-                                                    <option @if($key1=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
+                                                    
                                                 </select>
                                             </div>
                                             <div class="col-9">
-                                                <input value="{{ $link1 }}" type="text" class="form-control" placeholder="Website Address" name="link1" >
+                                                <input value="" type="text" class="form-control" placeholder="Website Address" name="link1" >
                                             </div>
                                         </div>
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type2" onchange="change_link('type2', 'link2');">
+                                                <select class="form-control" name="type2">
                                                     <option value="">select one</option>
-                                                    <option @if($key2=='linkedin') selected @endif value="linkedin">linkedin</option>
-                                                    <option @if($key2=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key2=='facebook') selected @endif value="facebook">Facebook</option>
-                                                    <option @if($key2=='Twiter') selected @endif value="Twiter">Twitter</option>
-                                                    <option @if($key2=='Instagram') selected @endif value="Instagram">Instagram</option>
-                                                    <option @if($key2=='Behance') selected @endif value="Behance">Behance</option>
-                                                    <option @if($key2=='Youtube') selected @endif value="Youtube">Youtube</option>
-                                                    <option @if($key2=='Skype') selected @endif value="Skype">Skype</option>
-                                                    <option @if($key2=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
+                                                    
                                                 </select>
                                             </div>
                                             <div class="col-9">
-                                                <input value="{{ $link2 }}" type="text" class="form-control" placeholder="Website Address" name="link2">
+                                                <input value="" type="text" class="form-control" placeholder="Website Address" name="link2">
                                             </div>
                                         </div>
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type3"  onchange="change_link('type3', 'link3');">
+                                                <select class="form-control" name="type3">
                                                     <option value="">select one</option>
-                                                    <option @if($key3=='linkedin') selected @endif value="linkedin">linkedin</option>
-                                                    <option @if($key3=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key3=='facebook') selected @endif value="facebook">Facebook</option>
-                                                    <option @if($key3=='Twiter') selected @endif value="Twiter">Twitter</option>
-                                                    <option @if($key3=='Instagram') selected @endif value="Instagram">Instagram</option>
-                                                    <option @if($key3=='Behance') selected @endif value="Behance">Behance</option>
-                                                    <option @if($key3=='Youtube') selected @endif value="Youtube">Youtube</option>
-                                                    <option @if($key3=='Skype') selected @endif value="Skype">Skype</option>
-                                                    <option @if($key3=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
+                                                    
                                                 </select>
                                             </div>
                                             <div class="col-9">
-                                                <input value="{{ $link3 }}" type="text" class="form-control" placeholder="Website Address" name="link3" >
+                                                <input value="" type="text" class="form-control" placeholder="Website Address" name="link3" >
                                             </div>
                                         </div>
 
                                         <div class="row mt-2">
                                             <div class="col-3">
-                                                <select class="form-control" name="type4"  onchange="change_link('type4', 'link4');">
+                                                <select class="form-control" name="type4">
                                                     <option value="">select one</option>
-                                                    <option @if($key4=='linkedin') selected @endif value="linkedin">linkedin</option>
-                                                    <option @if($key4=='Vimeo') selected @endif value="Vimeo">Vimeo</option>
-                                                    <option @if($key4=='facebook') selected @endif value="facebook">Facebook</option>
-                                                    <option @if($key4=='Twiter') selected @endif value="Twiter">Twitter</option>
-                                                    <option @if($key4=='Instagram') selected @endif value="Instagram">Instagram</option>
-                                                    <option @if($key4=='Behance') selected @endif value="Behance">Behance</option>
-                                                    <option @if($key4=='Youtube') selected @endif value="Youtube">Youtube</option>
-                                                    <option @if($key4=='Skype') selected @endif value="Skype">Skype</option>
-                                                    <option @if($key4=='WhatsApp') selected @endif value="WhatsApp">WhatsApp</option>
+                                                    
                                                 </select>
                                             </div>
                                             <div class="col-9">
-                                                <input value="{{ $link4 }}" type="text" class="form-control" placeholder="Website Address" name="link4" >
+                                                <input value="" type="text" class="form-control" placeholder="Website Address" name="link4" >
                                             </div>
                                         </div>
 
@@ -246,44 +204,110 @@
 
 @section('js')
     <script type="text/javascript">
-        function change_link(key, value){
+        var socialLink=<?=json_encode($socialLink)?>;
+        var pre_opt_one={"key":"","link":""};
+        var pre_opt_two={"key":"","link":""};
+        var pre_opt_three={"key":"","link":""};
+        var pre_opt_four={"key":"","link":""};
 
-            var facebook = '{{ \App\Models\SocialLink::where("name", "Facebook")->first()->link;  }}';
-            var twitter = '{{ \App\Models\SocialLink::where("name", "Twitter")->first()->link;  }}';
-            var instagram = '{{ \App\Models\SocialLink::where("name", "instagram")->first()->link;  }}';
-            var behance = '{{ \App\Models\SocialLink::where("name", "Behance")->first()->link;  }}';
-            var youtube = '{{ \App\Models\SocialLink::where("name", "youtube")->first()->link;  }}';
-            var skype = '{{ \App\Models\SocialLink::where("name", "skype")->first()->link;  }}';
-            var whatsapp = '{{ \App\Models\SocialLink::where("name", "Whatsapp")->first()->link;  }}';
-            var linkedin = '{{ \App\Models\SocialLink::where("name", "Linkedin")->first()->link;  }}';
-            var vimeo = '{{ \App\Models\SocialLink::where("name", "vimeo")->first()->link;  }}';
+        @isset ($card)
 
-            var type = document.getElementsByName(key)[0].value;
+            @if(!empty($card->link_1))
+                pre_opt_one = <?=$card->link_1?>;
+            @endif
 
-            if (type == "facebook"){
-                document.getElementsByName(value)[0].value = facebook;
-            } else if(type == "Twiter"){
-                document.getElementsByName(value)[0].value = twitter;
-            } else if(type == "Instagram"){
-                document.getElementsByName(value)[0].value = instagram;
-            } else if(type == "Behance"){
-                document.getElementsByName(value)[0].value = behance;
-            } else if(type == "Youtube"){
-                document.getElementsByName(value)[0].value = youtube;
-            } else if(type == "WhatsApp"){
-                document.getElementsByName(value)[0].value = whatsapp;
-            }
-            else if(type == "linkedin"){
-                document.getElementsByName(value)[0].value = linkedin;
-            }
-            else if(type == "Vimeo"){
-                document.getElementsByName(value)[0].value = vimeo;
-            }
-            else if(type == "Skype"){
-                document.getElementsByName(value)[0].value = skype;
-            }
+            @if(!empty($card->link_4))
+                pre_opt_two = <?=$card->link_4?>;
+            @endif
 
+            @if(!empty($card->link_5))
+                pre_opt_three = <?=$card->link_5?>;
+            @endif
+
+            @if(!empty($card->link_6))
+                pre_opt_four = <?=$card->link_6?>;
+            @endif
+
+        @endisset
+
+        function loadSocialUrl(optionName, fid){
+            //alert(optionName);
+            $.each(socialLink,function(key,row){
+                if(optionName==row.name)
+                {
+                    $("input[name='"+fid+"']").val(row.link);
+                }
+            });
         }
+
+        $(document).ready(function(){
+            $('body').on('change',"select[name='type1']",function(){
+                var optionName=$(this).val();
+                loadSocialUrl(optionName,"link1");
+                
+            });
+
+            $('body').on('change',"select[name='type2']",function(){
+                var optionName=$(this).val();
+                loadSocialUrl(optionName,"link2");
+            });
+
+            $('body').on('change',"select[name='type3']",function(){
+                var optionName=$(this).val();
+                loadSocialUrl(optionName,"link3");
+            });
+
+            $('body').on('change',"select[name='type4']",function(){
+                var optionName=$(this).val();
+                loadSocialUrl(optionName,"link4");
+            });
+        });
+
+        
+        var htmlOpt_one='<option value="">Social Link</option>';
+        var htmlOpt_two='<option value="">Social Link</option>';
+        var htmlOpt_three='<option value="">Social Link</option>';
+        var htmlOpt_four='<option value="">Social Link</option>';
+        $.each(socialLink,function(key,row){
+            htmlOpt_one+='<option ';
+            if(pre_opt_one.key==row.name)
+            {
+                htmlOpt_one+=' selected="selected" ';
+            }
+            htmlOpt_one+='value="'+row.name+'">'+row.name+'</option>';
+
+
+            htmlOpt_two+='<option ';
+            if(pre_opt_two.key==row.name)
+            {
+                htmlOpt_two+=' selected="selected" ';
+            }
+            htmlOpt_two+=' value="'+row.name+'">'+row.name+'</option>';
+
+            htmlOpt_three+='<option ';
+            if(pre_opt_three.key==row.name)
+            {
+                htmlOpt_three+=' selected="selected" ';
+            }
+            htmlOpt_three+=' value="'+row.name+'">'+row.name+'</option>';
+
+            htmlOpt_four+='<option ';
+            if(pre_opt_four.key==row.name)
+            {
+                htmlOpt_four+=' selected="selected" ';
+            }
+            htmlOpt_four+=' value="'+row.name+'">'+row.name+'</option>';
+        });
+
+        $("select[name=type1]").html(htmlOpt_one);
+        $("select[name=type2]").html(htmlOpt_two);
+        $("select[name=type3]").html(htmlOpt_three);
+        $("select[name=type4]").html(htmlOpt_four);
+
+        $("input[name=link1]").val(pre_opt_one.link);
+        $("input[name=link2]").val(pre_opt_two.link);
+        $("input[name=link3]").val(pre_opt_three.link);
+        $("input[name=link4]").val(pre_opt_four.link);
 
     </script>
     <script type="text/javascript">

@@ -4,10 +4,10 @@
     <div class="wrapper-page">
         <div class="account-pages">
             <div class="account-box">
-                <div class="account-logo-box text-center bg-primary p-4">
+                <div class="account-logo-box text-center bg-white p-4">
                     <img src="{{ asset('logo/logo.svg') }}">
-                    <h3 class="m-0 text-white">{{ config('app.name', 'Laravel') }}</h3>
-                    <h5 class="text-white mb-0">Create a new Account {{-- <span style="color: black;">OR</span> <a href="{{ route('login') }}">Already have account?</a> --}}</h5>
+                    <h3 class="m-0 text-black">{{ config('app.name', 'Laravel') }}</h3>
+                    <h5 class="text-black mb-0">Create a new Account {{-- <span style="color: black;">OR</span> <a href="{{ route('login') }}">Already have account?</a> --}}</h5>
                 </div>
                 <div class="account-content">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -73,7 +73,7 @@
 
                         <div class="form-group row text-right m-t-10">
                             <div class="col-md-12 text-center">
-                                <button class="btn btn-md btn-primary waves-effect waves-light" type="submit">Register</button>
+                                <button class="btn btn-md btn-info waves-effect waves-light" type="submit">Register</button>
                             </div>
                         </div>
 

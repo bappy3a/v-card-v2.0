@@ -145,124 +145,124 @@
                             $link4 = json_decode($card->link_6) ? json_decode($card->link_6)->link : Null;
                             @endphp
                             <li>
-                                @if ($key1 == 'linkedin')
+                                @if (strtolower($key1) == 'linkedin')
                                 <i class="fab fa-linkedin-in custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">linkedin</a></span>
-                                @elseif($key1 == 'Vimeo')
+                                @elseif(strtolower($key1) == 'vimeo')
                                 <i class="fab fa-vimeo-v custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">vimeo</a></span>
-                                @elseif($key1 == 'facebook')
+                                @elseif(strtolower($key1) == 'facebook')
                                 <i class="fab fa-facebook-f custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">facebook</a></span>
-                                @elseif($key1 == 'Twiter')
+                                @elseif(strtolower($key1) == 'twiter')
                                 <i class="fab fa-twitter custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">twitter</a></span>
-                                @elseif($key1 == 'Instagram')
+                                @elseif(strtolower($key1) == 'instagram')
                                 <i class="fab fa-instagram custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">instagram</a></span>
-                                @elseif($key1 == 'Behance')
+                                @elseif(strtolower($key1) == 'behance')
                                 <i class="fab fa-behance custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">behance</a></span>
-                                @elseif($key1 == 'Youtube')
+                                @elseif(strtolower($key1) == 'youtube')
                                 <i class="fab fa-youtube custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">Youtube</a></span>
-                                @elseif($key1 == 'Skype')
+                                @elseif(strtolower($key1) == 'skype')
                                 <i class="fab fa-skype custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">skype</a></span>
-                                @elseif($key1 == 'WhatsApp')
+                                @elseif(strtolower($key1) == 'whatsapp')
                                 <i class="fab fa-whatsapp custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link1 }}">whatsapp</a></span>
                                 @endif
                             </li>
                             <br>
                             <li>
-                                @if ($key2 == 'linkedin')
+                                @if (strtolower($key2) == 'linkedin')
                                 <i class="fab fa-linkedin-in custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">linkedin</a></span>
-                                @elseif($key2 == 'Vimeo')
+                                @elseif(strtolower($key2) == 'vimeo')
                                 <i class="fab fa-vimeo-v custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">vimeo</a></span>
-                                @elseif($key2 == 'facebook')
-                                <i class="fab fa-facebook custom_i"></i>
+                                @elseif(strtolower($key2) == 'facebook')
+                                <i class="fab fa-facebook-f custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">facebook</a></span>
-                                @elseif($key2 == 'Twiter')
+                                @elseif(strtolower($key2) == 'twiter')
                                 <i class="fab fa-twitter custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">twitter</a></span>
-                                @elseif($key2 == 'Instagram')
+                                @elseif(strtolower($key2) == 'instagram')
                                 <i class="fab fa-instagram custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">instagram</a></span>
-                                @elseif($key2 == 'Behance')
+                                @elseif(strtolower($key2) == 'behance')
                                 <i class="fab fa-behance custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">behance</a></span>
-                                @elseif($key2 == 'Youtube')
+                                @elseif(strtolower($key2) == 'youtube')
                                 <i class="fab fa-youtube custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">Youtube</a></span>
-                                @elseif($key2 == 'Skype')
+                                @elseif(strtolower($key2) == 'skype')
                                 <i class="fab fa-skype custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">skype</a></span>
-                                @elseif($key2 == 'WhatsApp')
+                                @elseif(strtolower($key2) == 'whatsapp')
                                 <i class="fab fa-whatsapp custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link2 }}">whatsapp</a></span>
                                 @endif
                             </li>
                             <br>
                             <li>
-                                @if ($key3 == 'linkedin')
+                                @if (strtolower($key3) == 'linkedin')
                                 <i class="fab fa-linkedin-in custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">linkedin</a></span>
-                                @elseif($key3 == 'Vimeo')
+                                @elseif(strtolower($key3) == 'vimeo')
                                 <i class="fab fa-vimeo-v custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">vimeo</a></span>
-                                @elseif($key3 == 'facebook')
-                                <i class="fab fa-facebook custom_i"></i>
+                                @elseif(strtolower($key3) == 'facebook')
+                                <i class="fab fa-facebook-f custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">facebook</a></span>
-                                @elseif($key3 == 'Twiter')
+                                @elseif(strtolower($key3) == 'twiter')
                                 <i class="fab fa-twitter custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">twitter</a></span>
-                                @elseif($key3 == 'Instagram')
+                                @elseif(strtolower($key3) == 'instagram')
                                 <i class="fab fa-instagram custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">instagram</a></span>
-                                @elseif($key3 == 'Behance')
+                                @elseif(strtolower($key3) == 'behance')
                                 <i class="fab fa-behance custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">behance</a></span>
-                                @elseif($key3 == 'Youtube')
+                                @elseif(strtolower($key3) == 'youtube')
                                 <i class="fab fa-youtube custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">Youtube</a></span>
-                                @elseif($key3 == 'Skype')
+                                @elseif(strtolower($key3) == 'skype')
                                 <i class="fab fa-skype custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">skype</a></span>
-                                @elseif($key3 == 'WhatsApp')
+                                @elseif(strtolower($key3) == 'whatsapp')
                                 <i class="fab fa-whatsapp custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link3 }}">whatsapp</a></span>
                                 @endif
                             </li>
                             <br>
                             <li>
-                                @if ($key4 == 'linkedin')
+                                @if (strtolower($key4) == 'linkedin')
                                 <i class="fab fa-linkedin-in custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">linkedin</a></span>
-                                @elseif($key4 == 'Vimeo')
+                                @elseif(strtolower($key4) == 'vimeo')
                                 <i class="fab fa-vimeo-v custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">vimeo</a></span>
-                                @elseif($key4 == 'facebook')
-                                <i class="fab fa-facebook custom_i"></i>
+                                @elseif(strtolower($key4) == 'facebook')
+                                <i class="fab fa-facebook-f custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">facebook</a></span>
-                                @elseif($key4 == 'Twiter')
+                                @elseif(strtolower($key4) == 'twiter')
                                 <i class="fab fa-twitter custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">twitter</a></span>
-                                @elseif($key4 == 'Instagram')
+                                @elseif(strtolower($key4) == 'instagram')
                                 <i class="fab fa-instagram custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">instagram</a></span>
-                                @elseif($key4 == 'Behance')
+                                @elseif(strtolower($key4) == 'behance')
                                 <i class="fab fa-behance custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">behance</a></span>
-                                @elseif($key4 == 'Youtube')
+                                @elseif(strtolower($key4) == 'youtube')
                                 <i class="fab fa-youtube custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">Youtube</a></span>
-                                @elseif($key4 == 'Skype')
+                                @elseif(strtolower($key4) == 'skype')
                                 <i class="fab fa-skype custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">skype</a></span>
-                                @elseif($key4 == 'WhatsApp')
+                                @elseif(strtolower($key4) == 'whatsapp')
                                 <i class="fab fa-whatsapp custom_i"></i>
                                 <span>&nbsp;&nbsp;&nbsp; <a href="{{ $link4 }}">whatsapp</a></span>
                                 @endif

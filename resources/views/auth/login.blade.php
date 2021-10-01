@@ -4,9 +4,9 @@
         <div class="wrapper-page">
             <div class="account-pages">
                 <div class="account-box">
-                    <div class="account-logo-box bg-primary p-4  text-center">
+                    <div class="account-logo-box bg-white p-4  text-center">
                         <img src="{{ asset('logo/logo.svg') }}">
-                        <h3 class="m-0 text-center text-white">{{ config('app.name', 'Laravel') }}</h3>
+                        <h3 class="m-0 text-center text-black">{{ config('app.name', 'Laravel') }}</h3>
                     </div>
                     <div class="account-content">
                         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -52,7 +52,7 @@
 
                             <div class="form-group row text-center m-t-10">
                                 <div class="col-12">
-                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Sign In</button>
+                                    <button class="btn btn-md btn-block btn-info waves-effect waves-light" type="submit">Sign In</button>
                                 </div>
                             </div>
 
