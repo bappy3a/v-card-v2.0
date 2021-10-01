@@ -255,6 +255,8 @@
             var youtube = '{{ \App\Models\SocialLink::where("name", "youtube")->first()->link;  }}';
             var skype = '{{ \App\Models\SocialLink::where("name", "skype")->first()->link;  }}';
             var whatsapp = '{{ \App\Models\SocialLink::where("name", "Whatsapp")->first()->link;  }}';
+            var linkedin = '{{ \App\Models\SocialLink::where("name", "Linkedin")->first()->link;  }}';
+            var vimeo = '{{ \App\Models\SocialLink::where("name", "vimeo")->first()->link;  }}';
 
             var type = document.getElementsByName(key)[0].value;
 
@@ -271,6 +273,16 @@
             } else if(type == "WhatsApp"){
                 document.getElementsByName(value)[0].value = whatsapp;
             }
+            else if(type == "linkedin"){
+                document.getElementsByName(value)[0].value = linkedin;
+            }
+            else if(type == "Vimeo"){
+                document.getElementsByName(value)[0].value = vimeo;
+            }
+            else if(type == "Skype"){
+                document.getElementsByName(value)[0].value = skype;
+            }
+
         }
 
     </script>
