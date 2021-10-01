@@ -67,7 +67,11 @@
                     }
                 </style>
                 <?php 
+<<<<<<< HEAD
                 $default_image=asset('logo/profile.jpeg');
+=======
+                $default_image=asset('website/img/heder.png');
+>>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
                 ?>
                 <div class="profile-body">
                     <div class="author-img">
