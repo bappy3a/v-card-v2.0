@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('register');
+    if (Auth::check()) {
+        return redirect()->route('home');
+    }else{
+        return redirect()->route('register');
+    }
 });
 
 Auth::routes();

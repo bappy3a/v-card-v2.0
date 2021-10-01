@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>{{ $card->first_name }}  {{ $card->last_name }}</title>
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta property="og:title" content="" />
     <meta property="og:type" content="" />
@@ -13,13 +13,17 @@
 
     <link rel="manifest" href="site.webmanifest" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="shortcut icon" href="{{ asset('logo/logo.svg') }}">
+    <link rel="shortcut icon" href="{{ asset('logo/favicon.ico') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- -----cdn------ -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
     <!-- -----cdn------ -->
 
@@ -50,14 +54,31 @@
                 {{-- <div class="qr">
                     <a href="">{!! QrCode::size(34)->generate(route('card.username',$card->user_name)) !!}</a>
                 </div> --}}
-                
+                <style type="text/css">
+                    .author-image{
+                        width: 115px;
+                        height: 115px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        background-color: var(--white);
+                        box-shadow: 0px 0px 18px #848181;
+                        background-size: cover !important;
+                        border: 5px #fff solid;
+                    }
+                </style>
+                <?php 
+                $default_image=asset('logo/profile.jpeg');
+                ?>
                 <div class="profile-body">
                     <div class="author-img">
+                        <div class="author-image" style="background:#fff url('{{!empty($card->photo)?asset($card->photo):$default_image}}');"></div>
+
+                        {{-- 
                         @if ($card->photo)
                             <img src="{{ asset($card->photo) }}" alt="heder">
                         @else
                             <img src="{{ asset('website/img/heder.png') }}" alt="heder">
-                        @endif
+                        @endif --}}
 
                     </div>
                     {{-- <div class="heder_description">
@@ -80,7 +101,7 @@
                          
                         </div>
                         <div class="modal-body">
-                           <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(70)->generate(route('card.username',$card->user_name))) !!} ">
+                           <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(200)->generate(route('card.username',$card->user_name))) !!} ">
                           <p class="user_name">{{ $card->first_name }}  {{ $card->last_name }}</p>
                           <p class="user_phone">{{ $card->link_3.$card->phone }}</p>
                         </div>
@@ -97,7 +118,7 @@
                         <a id="myBtn" href="javascript:void(0)"><img src="{{ asset('website/img/Group.png') }}" alt=""></a>
                     </div>
                     <div class="social_list">
-                    <div class="name">{{ $card->first_name }}  {{ $card->last_name }}</div>
+                    <div class="name">{{ $card->first_name }}  {{ $card->last_name }} <span><i class="fas fa-check-circle"></i></span></div>
                     <div class="designation">
                         <p>{{ $card->designation }}</p>
                         <hr class="he_card">
@@ -105,6 +126,9 @@
                     <div class="company">{{ $card->conpany_name }}</div>
                     <div class="intro">
                         <p>{{ $card->link_3.$card->phone }}</p>
+                    </div>
+                    <div class="card_mail">
+                        <p>{{ $card->email }}</p>
                     </div>
                     <div class="description">{{ $card->description }}</div>
                         <ul>
@@ -279,7 +303,7 @@
                     <span></span>
                 </div> -->
                 <div class="footer">
-                    <div class="social-icon footer">
+                    <div class="social-icon" style="background-color: var(--white);">
                         <ul>
                                 <li>
                                     <a href="tel:{{ $card->link_3.$card->phone }}">
@@ -305,7 +329,7 @@
                     </div>
                     <div class="brand">
                      <span class="web_address">www.thelakhanigroup.com</span>
-                     <span class="pby">Powered By <img src="{{ asset('website/img/logo.svg') }}" alt=""></span>
+                     <span class="pby">Powered By <a href="https://thelakhanigroup.com/"><img src="{{ asset('website/img/logo.svg') }}" alt=""></a></span>
                     </div>
                 </div>
             </div>

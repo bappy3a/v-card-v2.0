@@ -5057,18 +5057,15 @@ h3.timeline-title {
   width: 100%;
 }
 
-.account-pages {
-  display: table-cell;
-  vertical-align: middle;
-}
 
-.account-box {
+
+/*.account-box {
   position: relative;
   max-width: 460px;
   margin: 20px auto;
   background-color: #ffffff;
   border-radius: 5px;
-}
+}*/
 
 .account-box .account-content {
   padding: 30px;

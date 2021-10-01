@@ -73,7 +73,7 @@ class CardController extends Controller
         }
         $card->save();
 
-        $to = 'allrafi3a@gmail.com';
+        $to = 'support@nfc.bz';
         $subject = 'Your Smart Card Info';
         $message = 'Your Smart link '. route('card.username',$card->user_name);
         mailSend($subject,$message,$to);
@@ -115,8 +115,8 @@ class CardController extends Controller
         $this->validate($request, [
             'first_name' => 'required|string',
             'last_name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'required|string',
+            'email' => 'nullable|email',
+            'phone' => 'nullable|string',
             'photo' => 'nullable|mimes:jpeg,jpg,png',
         ]);
         $data = Card::find($id);

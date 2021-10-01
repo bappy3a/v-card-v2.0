@@ -1,0 +1,43 @@
+@media (min-width: 768px) {
+	
+	.signup-bg{
+		background:linear-gradient(0deg, rgb(28 25 27 / 65%), rgb(0 0 0 / 69%)), url(logo/2.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.account-box {
+	    position: relative;
+	    max-width: 460px; 
+	    margin: 20px auto;
+	    background-color: #ffffff;
+	    border-radius: 5px;
+	}
+
+	.account-pages {
+	  display: table-cell;
+	  vertical-align: middle;
+	}
+}
+
+@media (max-width: 768px) {
+	
+
+
+	.signup-bg{
+		background:#fff;
+	}
+	.account-box {
+	    position: relative;
+	    width: 100% !important;
+	    margin: 0px auto;
+	    background-color: #ffffff;
+	    border-radius: 5px;
+	}
+
+	.account-pages {
+	  -- display: table-cell;
+	  -- vertical-align: middle;
+	  display:block;
+	}
+}
