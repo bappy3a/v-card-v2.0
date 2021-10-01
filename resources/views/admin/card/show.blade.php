@@ -34,11 +34,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-md-2 col-form-label">Your photo</label>
                                     <div class="col-md-10">
-<<<<<<< HEAD
                                         <img class="thumb-lg rounded-circle" src="{{ $card->photo ? asset($card->photo) : asset('logo/profile.jpeg') }}" style="object-fit: cover; width: 150px; height: 150px; border: 1px solid #ccc;" id="profileImageShow"/><br />
-=======
-                                        <img class="thumb-lg rounded-circle" src="{{ $card->photo ? asset($card->photo) : asset('assets/images/profile.jpeg') }}" style="object-fit: cover; width: 150px; height: 150px; border: 1px solid #ccc;" id="profileImageShow"/><br />
->>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
                                         <div class="mt-2">
                                             <input  type="file" name="photo" id="profileImage" class="@error('photo') is-invalid @enderror" />
                                             @error('photo')
@@ -69,51 +65,32 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Email</label>
                                     <div class="col-md-10">
-<<<<<<< HEAD
                                         <input value="{{ $card->email }}"  type="email" class="form-control @error('email') is-invalid @enderror" name="email" required  autocomplete="off">
-=======
-                                        <input value="{{ $card->email }}"  type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="off">
->>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Designation</label>
                                     <div class="col-md-10">
-<<<<<<< HEAD
                                         <input value="{{ $card->designation }}" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation"  autocomplete="off">
-=======
-                                        <input value="{{ $card->designation }}" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" required autocomplete="off">
->>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Company Name</label>
                                     <div class="col-md-10">
-<<<<<<< HEAD
                                         <input value="{{ $card->conpany_name }}" type="text" class="form-control @error('conpany_name') is-invalid @enderror" name="conpany_name"  autocomplete="off" placeholder="">
-=======
-                                        <input value="{{ $card->conpany_name }}" type="text" class="form-control @error('conpany_name') is-invalid @enderror" name="conpany_name" required autocomplete="off" placeholder="Company Name">
->>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Description</label>
                                     <div class="col-md-10">
-<<<<<<< HEAD
                                         <input value="{{ $card->description }}" type="text" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="off" placeholder="">
-=======
-                                        <input value="{{ $card->description }}" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="off" placeholder="Sumthin about You">
->>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Address</label>
                                     <div class="col-md-10">
-<<<<<<< HEAD
                                         <input value="{{ $card->link_2 }}" type="text" class="form-control @error('link_2') is-invalid @enderror" name="link_2" autocomplete="off">
-=======
-                                        <input value="{{ $card->link_2 }}" type="text" class="form-control @error('link_2') is-invalid @enderror" name="link_2" required autocomplete="off">
->>>>>>> f213cac3e25d2842ac3f774b137b711c184ed8b4
+
                                     </div>
                                 </div>
                                 <div class="form-group row">
